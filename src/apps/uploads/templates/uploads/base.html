@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load static %}
+
+
+<html lang="en" data-bs-theme="dark">
+
+
+{% include "uploads/head.html" %}
+
+
+<body>
+
+
+    {% include "uploads/navbar.html" %}
+
+    <main>
+
+        {% block content %}
+        {% endblock %}
+
+    </main>
+
+    {% include "uploads/footer.html" %}
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{% static 'uploads/js/bootstrap-5.3.3.bundle.min.js' %}"></script>
+
+</body>
+
+
+</html>
+

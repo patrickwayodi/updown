@@ -1,0 +1,74 @@
+{% load static %}
+
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+
+    <div class="container-fluid">
+
+        <a class="navbar-brand pe-4" href="{% url 'site_home' %}">Updown</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse ps-5" id="navbarsExample04">
+
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+
+                <li class="nav-item">
+                    <a class="nav-link active" href="{% url 'site_home' %}">Requests</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link active" href="{% url 'site_home' %}">Videos</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link active" href="{% url 'site_home' %}">Status</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link active" href="{% url 'site_home' %}">About</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link active dropdown-toggle" href="{% url 'site_home' %}" data-bs-toggle="dropdown">
+                        Settings
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{% url 'site_home' %}">Accounts</a></li>
+                        <li><a class="dropdown-item" href="{% url 'site_home' %}">Documentation</a></li>
+                        <li><a class="dropdown-item" href="{% url 'site_home' %}">About</a></li>
+                        {% if user.is_authenticated %}
+                            <li>
+                                <a class="dropdown-item" href="{% url 'logout' %}">
+                                    Log Out ({{ user.username }})
+                                </a>
+                            </li>
+                        {% else %}
+                            <li>
+                                <a class="dropdown-item" href="{% url 'login' %}">Log In</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="{% url 'signup' %}">Sign Up</a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+
+<!--
+https://getbootstrap.com/docs/5.3/components/navbar
+-->
+
+

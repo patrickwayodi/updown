@@ -1,0 +1,76 @@
+{% load static %}
+
+<!-- https://getbootstrap.com/docs/5.3/components/navbar -->
+
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+
+    <div class="container-fluid">
+
+        <a class="navbar-brand pe-4" href="{% url 'site_home' %}">Site</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse ps-5" id="navbarsExample04">
+
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+
+                <li class="nav-item">
+                    <a class="nav-link active" href="{% url 'upload_list' %}">Uploads</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link active" href="{% url 'create_upload' %}">Upload a File</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link active" href="/">Search</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link active" href="{% url 'site_home' %}">About</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link active dropdown-toggle" href="{% url 'site_home' %}" data-bs-toggle="dropdown">
+                        Settings
+                    </a>
+                    <ul class="dropdown-menu">
+                        {% if user.is_authenticated %}
+                            <li>
+                                <a class="dropdown-item" href="{% url 'site_home' %}">
+                                    Account ({{ user.username }})
+                                </a>
+                            </li>
+                        {% endif %}
+                        <li><a class="dropdown-item" href="{% url 'site_home' %}">Network</a></li>
+                        <li><a class="dropdown-item" href="{% url 'site_home' %}">Speed</a></li>
+                        <li><a class="dropdown-item" href="{% url 'site_home' %}">Memory</a></li>
+                        {% if user.is_authenticated %}
+                            <li>
+                                <a class="dropdown-item" href="{% url 'logout' %}">
+                                    Log Out ({{ user.username }})
+                                </a>
+                            </li>
+                        {% else %}
+                            <li>
+                                <a class="dropdown-item" href="{% url 'login' %}">Log In</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="{% url 'signup' %}">Sign Up</a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+

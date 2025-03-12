@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load static %}
+
+
+<html lang="en" data-bs-theme="dark">
+
+
+{% include "accounts/head.html" %}
+
+
+<body>
+
+
+    {% include "accounts/navbar.html" %}
+
+    <main>
+
+        {% block content %}
+        {% endblock %}
+
+    </main>
+
+    {% include "accounts/footer.html" %}
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{% static 'accounts/js/bootstrap-5.3.3.bundle.min.js' %}"></script>
+
+
+</body>
+
+
+</html>
+

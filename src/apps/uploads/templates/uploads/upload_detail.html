@@ -1,0 +1,41 @@
+{% extends "uploads/base.html" %}
+
+
+{% block content %}
+
+
+<div class="container">
+
+    <div>
+        <h1>File Successfully Uploaded</h1>
+    </div>
+
+    <br />
+
+    <div>
+        Filename: {{ upload.uploaded_file }}
+    </div>
+
+    <br />
+
+    <div>
+        {% if upload.owner %}
+            Uploader: {{ upload.owner }} <br />
+        (% else %}
+            Uploader: {{ upload.owner }} <br />
+        {% endif %}
+    </div>
+
+    <div>
+        Uploaded: {{ upload.date_uploaded }} (GMT)
+    </div>
+
+    <br />
+    <br />
+
+</div>
+<!-- /.container -->
+
+
+{% endblock %}
+

@@ -1,0 +1,19 @@
+# Production
+# ------------------------------------------------------------------------------
+
+crispy-bootstrap5
+Django==4.2.20
+django-crispy-forms
+pillow
+pip
+psycopg[binary]
+setuptools
+wheel
+
+
+# Local
+# ------------------------------------------------------------------------------
+
+django-debug-toolbar
+watchdog
+
